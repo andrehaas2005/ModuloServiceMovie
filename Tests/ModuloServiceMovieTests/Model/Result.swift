@@ -1,11 +1,3 @@
-//
-//  Result.swift
-//  ModuloServiceMovie
-//
-//  Created by Andre  Haas on 27/05/25.
-//
-
-
 struct Result: Codable {
     let adult: Bool
     let backdropPath: String

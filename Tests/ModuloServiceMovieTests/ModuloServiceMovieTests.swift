@@ -1,10 +1,3 @@
-//
-//  ModuleMoviesSeriesNetworkServiceTests.swift
-//  ModuleMoviesSeriesNetworkServiceTests
-//
-//  Created by Andre  Haas on 26/05/25.
-//
-
 import XCTest
 @testable import ModuloServiceMovie
 
@@ -25,8 +18,7 @@ final class NetworkServiceTests: XCTestCase {
             let movies: Cover =  try await networkService.request(request)
             XCTAssertNotNil(movies)
         } catch {
-            
+            XCTFail()
         }
     }
 }
-

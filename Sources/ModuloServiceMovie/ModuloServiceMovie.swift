@@ -12,26 +12,23 @@ import Foundation
 class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
     nonisolated(unsafe) public static let shared = NetworkService()
+    
     init(session: URLSession = .shared) {
         self.session = session
     }
     
     func request<T: Decodable>(_ request: APIRequest) async throws -> T {
+        
         guard let baseUrl = ProcessInfo.processInfo.environment["BASE_URL"] else {
-            print("URL Base not found")
             throw NetworkError.notfoundUrlBase
         }
         
-        guard var urlComponents = URLComponents(string: baseUrl + request.path) else {
+        guard var urlComponents = URLComponents(string: baseUrl + request.path),
+              let url = urlComponents.url else {
             throw NetworkError.invalidURL
         }
         guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
-            print("API Key not found")
             throw NetworkError.notfoundApiKey
-        }
-        
-        guard let url = urlComponents.url else {
-            throw NetworkError.invalidURL
         }
         
         urlComponents.queryItems = [
