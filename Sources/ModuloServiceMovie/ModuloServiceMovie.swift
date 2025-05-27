@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 15.0, *)
 @available(macOS 12.0, *)
 class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
