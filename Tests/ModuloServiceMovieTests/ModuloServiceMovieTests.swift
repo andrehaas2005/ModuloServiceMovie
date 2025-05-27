@@ -1,3 +1,4 @@
+
 import XCTest
 @testable import ModuloServiceMovie
 
@@ -18,7 +19,7 @@ final class NetworkServiceTests: XCTestCase {
             let movies: Cover =  try await networkService.request(request)
             XCTAssertNotNil(movies)
         } catch {
-            XCTFail()
+            XCTFail("Request failed with error: \(error)")
         }
     }
 }
