@@ -1,3 +1,11 @@
+//
+//  Cover.swift
+//  ModuloServiceMovie
+//
+//  Created by Andre  Haas on 27/05/25.
+//
+
+
 struct Cover: Codable {
     let page: Int
     let results: [Result]
