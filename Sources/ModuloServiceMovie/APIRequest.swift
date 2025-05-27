@@ -1,14 +1,5 @@
-//
-//  APIRequest.swift
-//  ModuleMoviesSeriesNetworkService
-//
-//  Created by Andre  Haas on 26/05/25.
-//
-
 import Foundation
 
-
-// APIRequest.swift
 struct APIRequest {
     let path: String
     let method: HTTPMethod
