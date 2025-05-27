@@ -11,18 +11,23 @@ import Foundation
 @available(macOS 12.0, *)
 class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
-    private let apiKey: String
-    private let baseUrl: String
-    
-    init(session: URLSession = .shared, apiKey: String, baseUrl: String) {
+    nonisolated(unsafe) public static let shared = NetworkService()
+    init(session: URLSession = .shared) {
         self.session = session
-        self.apiKey = apiKey
-        self.baseUrl = baseUrl
     }
     
     func request<T: Decodable>(_ request: APIRequest) async throws -> T {
+        guard let baseUrl = ProcessInfo.processInfo.environment["BASE_URL"] else {
+            print("URL Base not found")
+            throw NetworkError.notfoundUrlBase
+        }
+        
         guard var urlComponents = URLComponents(string: baseUrl + request.path) else {
             throw NetworkError.invalidURL
+        }
+        guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
+            print("API Key not found")
+            throw NetworkError.notfoundApiKey
         }
         
         guard let url = urlComponents.url else {
