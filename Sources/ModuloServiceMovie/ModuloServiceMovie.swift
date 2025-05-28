@@ -9,7 +9,7 @@ import Foundation
 
 @available(iOS 15.0, *)
 @available(macOS 12.0, *)
-class NetworkService: NetworkServiceProtocol {
+public final class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
   
     nonisolated(unsafe) public static let shared = NetworkService()
@@ -18,7 +18,7 @@ class NetworkService: NetworkServiceProtocol {
         self.session = session
     }
     
-    func request<T: Decodable>(_ request: APIRequest) async throws -> T {
+    public func request<T: Decodable>(_ request: APIRequest) async throws -> T {
         
         guard let baseUrl = ProcessInfo.processInfo.environment["BASE_URL"] else {
             throw NetworkError.notfoundUrlBase
