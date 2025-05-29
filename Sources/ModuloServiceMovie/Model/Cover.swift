@@ -6,9 +6,9 @@
 //
 
 
-struct Cover: Codable {
+struct Cover<T: Codable>: Codable {
     let page: Int
-    let results: [Result]
+    let results: [T]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
