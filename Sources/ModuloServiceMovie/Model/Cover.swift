@@ -1,6 +1,14 @@
-struct Cover: Codable {
+//
+//  Cover.swift
+//  ModuloServiceMovie
+//
+//  Created by Andre  Haas on 27/05/25.
+//
+
+
+struct Cover<T: Codable>: Codable {
     let page: Int
-    let results: [Movie]
+    let results: [T]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {

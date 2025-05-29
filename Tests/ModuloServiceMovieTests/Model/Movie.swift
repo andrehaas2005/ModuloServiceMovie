@@ -1,4 +1,4 @@
-struct Result: Codable {
+public struct Movie: Codable {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]

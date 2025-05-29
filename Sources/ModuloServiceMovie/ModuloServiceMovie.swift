@@ -11,6 +11,7 @@ import Foundation
 @available(macOS 12.0, *)
 public final class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
+  
     nonisolated(unsafe) public static let shared = NetworkService()
     
     init(session: URLSession = .shared) {
