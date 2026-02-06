@@ -4,8 +4,7 @@
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES"
-      buildArchitectures = "Automatic">
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -56,11 +55,16 @@
          <EnvironmentVariable
             key = "API_KEY"
             value = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZmIwOGRlZTQ2NTFjM2Q5YjE1MzZhNjllYTNmM2QxNiIsIm5iZiI6MTQyMDQ3MTA3MC44MDcwMDAyLCJzdWIiOiI1NGFhYWIxZWMzYTM2ODBjMzAwMDc0MjEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.O5QokbNrnxRhRqEdR8kq3Zvd0S1TkON2uFg-JwdOzOE"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "BASE_URL"
             value = "https://api.themoviedb.org/3/movie/"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "API_KEY"
+            value = "8fb08dee4651c3d9b1536a69ea3f3d16"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

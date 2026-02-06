@@ -1,4 +1,4 @@
-public enum HTTPMethod: String {
+public enum HTTPMovieMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"

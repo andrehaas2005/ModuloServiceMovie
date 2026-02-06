@@ -13,7 +13,7 @@ final class NetworkServiceTests: XCTestCase {
 
     func testRequestSuccess() async {
                   
-        let request = APIRequest(path: "top_rated", method: .get)
+        let request = APIMovieRequest(path: .nowPlaying, method: .get)
 
         do {
             let movies: Cover =  try await networkService.request(request)
