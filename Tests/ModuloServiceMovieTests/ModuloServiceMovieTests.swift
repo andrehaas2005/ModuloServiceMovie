@@ -8,7 +8,7 @@ final class NetworkServiceTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        networkService = NetworkService.shared
+        networkService = NetworkMovieService.shared
     }
 
     func testRequestSuccess() async {
